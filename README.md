@@ -1,17 +1,21 @@
 Sistem Pendukung Keputusan (SPK) Pemilihan Kendaraan Listrik Menggunakan Metode Simple Additive Weighting (SAW)
-![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)
-![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)
-![MCDM](https://img.shields.io/badge/Method-SAW%20(MCDM)-brightgreen.svg)
-![University](https://img.shields.io/badge/UMM-Teknik%20Informatika-red.svg)
-Repositori ini berisi implementasi kode dan pipeline eksperimen untuk Tugas Akhir/Skripsi berjudul "Sistem Pendukung Keputusan Pemilihan Kendaraan Listrik Menggunakan Metode Simple Additive Weighting (SAW) Berbasis Multi-Kriteria Spesifikasi Teknis dan Analisis Sensitivitas Pembobotan".
+<p>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.9%2B-blue.svg" alt="Python"></a>
+  <a href="https://jupyter.org/"><img src="https://img.shields.io/badge/Jupyter-Notebook-orange.svg" alt="Jupyter Notebook"></a>
+  <a href="#formulasi-matematis-metode-saw--uji-sensitivitas"><img src="https://img.shields.io/badge/Method-SAW%20(MCDM)-brightgreen.svg" alt="MCDM"></a>
+  <a href="#informasi-akademik--sitasi"><img src="https://img.shields.io/badge/UMM-Teknik%20Informatika-red.svg" alt="University"></a>
+</p>
+> Repositori ini berisi implementasi kode dan *pipeline* eksperimen untuk Tugas Akhir/Skripsi berjudul **"Sistem Pendukung Keputusan Pemilihan Kendaraan Listrik Menggunakan Metode Simple Additive Weighting (SAW) Berbasis Multi-Kriteria Spesifikasi Teknis dan Analisis Sensitivitas Pembobotan"**.
 ---
-Latar Belakang & Tujuan Penelitian
+Latar Belakang
 Perkembangan pasar kendaraan listrik (Electric Vehicles / EV) menghadirkan ratusan varian model dengan spesifikasi teknis yang saling bertolak belakang (trade-off)—seperti kapasitas baterai, jarak tempuh, efisiensi konsumsi energi, daya pengisian cepat DC, akselerasi, dan kecepatan maksimum. Kondisi ini memicu information overload yang menyulitkan calon pengguna dalam menentukan pilihan kendaraan secara objektif.
 Berbeda dengan pendekatan berbasis opini media sosial yang cenderung subjektif dan rentan noise, penelitian ini menerapkan pendekatan Multi-Criteria Decision Making (MCDM) yang deterministik menggunakan metode Simple Additive Weighting (SAW) berbasis data kuantitatif spesifikasi teknis pabrikan.
-Tujuan utama dari sistem ini meliputi:
-Memodelkan pipeline SPK berbasis metode SAW menggunakan 6 kriteria spesifikasi teknis utama pada 478 varian kendaraan listrik.
-Menganalisis perbandingan urutan peringkat rekomendasi antara skenario pembobotan netral (Equal Weighting / `Baseline`) dengan skenario pembobotan berbasis preferensi pengguna (`S1_Range`, `S2_Performance`, dan `S3_Efficiency_Charging`).
-Mengevaluasi tingkat kestabilan pemeringkatan dan fenomena pergeseran peringkat (rank reversal) menggunakan evaluasi multi-metrik: Spearman's Rank Correlation ($\rho$) secara global dan Weighted Similarity ($WS$) Rank Coefficient pada jajaran rekomendasi teratas (Top-10).
+---
+Tujuan Penelitian
+Adapun tujuan utama dari pengembangan sistem dan eksperimen pada repositori ini meliputi:
+Pemodelan SPK Multi-Kriteria: Memodelkan pipeline SPK berbasis metode SAW menggunakan 6 kriteria spesifikasi teknis utama pada 478 varian kendaraan listrik.
+Komparasi Skenario Pembobotan: Menganalisis perbandingan urutan peringkat rekomendasi antara skenario pembobotan netral (Equal Weighting / `Baseline`) dengan skenario pembobotan berbasis preferensi pengguna (`S1_Range`, `S2_Performance`, dan `S3_Efficiency_Charging`).
+Evaluasi Sensitivitas & Kestabilan Peringkat: Mengevaluasi tingkat kestabilan pemeringkatan dan fenomena pergeseran peringkat (rank reversal) menggunakan evaluasi multi-metrik: Spearman's Rank Correlation ($\rho$) secara global dan Weighted Similarity ($WS$) Rank Coefficient pada jajaran rekomendasi teratas (Top-10).
 ---
 Arsitektur Pipeline Sistem
 Mengacu pada rancangan arsitektur sistem dalam penelitian, pipeline komputasi dibagi ke dalam lima lapisan (layer) pemrosesan berurutan:
@@ -100,7 +104,7 @@ Deteksi Trade-Off Antar-Skenario Ekstrem: Korelasi menurun signifikan saat memba
 ---
 Struktur Repositori
 ```text
-├── dataset/
+├── data/
 │   └── electric_vehicles_spec_2025_new.csv   # Dataset spesifikasi teknis 478 varian EV
 ├── SPK_EV_SAW_Sensitivity_Analysis.ipynb # Notebook utama pipeline SAW & uji sensitivitas
 └── README.md                                 # Dokumentasi proyek
